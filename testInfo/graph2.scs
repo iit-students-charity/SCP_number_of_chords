@@ -1,0 +1,9 @@
+directed_graph->graph200(*
+	->rrel_vertex: V100_scp;;
+	->rrel_vertex: V200_scp;;
+	->rrel_vertex: V300_scp;;
+	->rrel_arc: ( V100_scp -> V200_scp )(* <= 15;; *);;
+	->rrel_arc: ( V200_scp -> V300_scp )(* <= 13;; *);;
+	->rrel_arc: ( V200_scp -> V100_scp )(* <= 15;; *);;
+	->rrel_arc: ( V300_scp -> V200_scp )(* <= 13;; *);;
+*);;

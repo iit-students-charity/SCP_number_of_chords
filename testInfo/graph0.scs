@@ -1,0 +1,12 @@
+directed_graph->graph0(*
+	->rrel_vertex: V1_scp;;
+	->rrel_vertex: V2_scp;;
+	->rrel_vertex: V3_scp;;
+	->rrel_vertex: V4_scp;;
+	->rrel_arc: ( V1_scp -> V2_scp )(* <= 3;; *);;
+	->rrel_arc: ( V2_scp -> V3_scp )(* <= 1;; *);;
+	->rrel_arc: ( V2_scp -> V1_scp )(* <= 3;; *);;
+	->rrel_arc: ( V3_scp -> V2_scp )(* <= 1;; *);;
+	->rrel_arc: ( V3_scp -> V4_scp )(* <= 4;; *);;
+	->rrel_arc: ( V4_scp -> V3_scp )(* <= 4;; *);;
+*);;

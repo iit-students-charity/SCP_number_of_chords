@@ -1,0 +1,14 @@
+directed_graph->graph100(*
+	->rrel_vertex: V10_scp;;
+	->rrel_vertex: V20_scp;;
+	->rrel_vertex: V30_scp;;
+	->rrel_vertex: V40_scp;;
+	->rrel_arc: ( V10_scp -> V20_scp )(* <= 5;; *);;
+	->rrel_arc: ( V20_scp -> V30_scp )(* <= 11;; *);;
+	->rrel_arc: ( V20_scp -> V10_scp )(* <= 5;; *);;
+	->rrel_arc: ( V30_scp -> V20_scp )(* <= 11;; *);;
+	->rrel_arc: ( V30_scp -> V10_scp )(* <= 2;; *);;
+	->rrel_arc: ( V10_scp -> V30_scp )(* <= 2;; *);;
+	->rrel_arc: ( V40_scp -> V10_scp )(* <= 12;; *);;
+	->rrel_arc: ( V10_scp -> V40_scp )(* <= 12;; *);;
+*);;

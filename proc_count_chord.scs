@@ -1,0 +1,225 @@
+scp_program ->  proc_count_chord(*
+	-> rrel_params: ... (*
+		-> rrel_1: rrel_in: _graph;;
+	*);;
+
+   -> rrel_operators: ... (*
+	 -> rrel_init: ..proc_oper1 (*
+	<- searchSetStr5;;
+	
+	-> rrel_1: rrel_fixed: rrel_scp_var: _graph;;
+	-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+	-> rrel_3: rrel_assign: rrel_scp_var: _graph_arc;;
+	-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_arc;;
+
+		-> rrel_set_3: rrel_assign: rrel_scp_var: rrel_node: _set_of_arcs;;
+		
+		=> nrel_then: ..proc_show;;
+            	=> nrel_else: ..proc_return;;
+	*);;
+	
+	-> ..proc_show (*
+		<- print;;
+
+                -> rrel_1: rrel_fixed: rrel_scp_const: [ARCS ARE HERE: ];;
+		=> nrel_goto : ..proc_create_arc_c ;;
+	*);;
+
+	-> ..proc_create_arc_c (*
+		<- contAssign ;;
+		
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_link: _arc_counter;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: rrel_link: [0];;
+
+			=> nrel_goto: ..proc_seach1;;
+	*);;
+
+	-> ..proc_seach1 (*
+		<- searchElStr3 ;;
+
+		-> rrel_1: rrel_fixed: rrel_scp_var: _set_of_arcs;;
+		-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc3;;
+		-> rrel_3: rrel_assign: rrel_scp_var: _graph_arc2;;
+
+		=> nrel_then: ..proc_erase;;
+		=> nrel_else: ..proc_arcs;;
+		//=> rrel_else: ....proc_return;;
+	*);;
+
+	-> ..proc_erase (*
+		<- eraseEl;;
+		-> rrel_1: rrel_fixed: rrel_scp_var: rrel_pos_const_perm: rrel_erase: _arc3;;
+
+		=> nrel_goto: ..proc_summator1;;
+	*);;
+
+	-> ..proc_summator1 (*
+		<- contAdd;;
+		-> rrel_1: rrel_fixed: rrel_scp_var: rrel_link: _arc_counter;;
+		-> rrel_2: rrel_fixed: rrel_scp_var: rrel_link: _arc_counter;;
+		-> rrel_3: rrel_fixed: rrel_scp_const: rrel_link: [1];;
+
+		=> nrel_goto: ..proc_seach1;;
+	*);;
+
+	-> ..proc_arcs (*
+		<- contDiv;;
+		-> rrel_1: rrel_fixed: rrel_scp_var: rrel_link: _arc_counter;;
+		-> rrel_2: rrel_fixed: rrel_scp_var: rrel_link: _arc_counter;;
+		-> rrel_3: rrel_fixed: rrel_scp_const: rrel_link: [2];;
+
+		=> nrel_goto: ..proc_print_a_word;;
+	*);;
+
+
+	-> ..proc_print_a_word (*
+		<- print;;
+		-> rrel_1: rrel_fixed: rrel_scp_const: [-----------NUMBER_OF_ARCS: ];;
+
+		=> nrel_goto: ..proc_print_amount_of_arcs;;
+	*);;
+
+	-> ..proc_print_amount_of_arcs (*
+		<- printNl;;
+		-> rrel_1: rrel_fixed: rrel_scp_var: _arc_counter;;
+
+		=> nrel_goto: ..proc_oper2;;
+	*);;
+
+	-> ..proc_oper2 (*
+	<- searchSetStr5;;
+	
+	-> rrel_1: rrel_fixed: rrel_scp_var: _graph;;
+	-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc4;;
+	-> rrel_3: rrel_assign: rrel_scp_var: _graph_arc3;;
+	-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc5;;
+	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_vertex;;
+
+		-> rrel_set_3: rrel_assign: rrel_scp_var: rrel_node: _set_of_vertexes;;
+		
+		=> nrel_then: ..proc_show2;;
+            	=> nrel_else: ..proc_return;;
+	*);;
+
+	-> ..proc_show2 (*
+		<- print;;
+
+                -> rrel_1: rrel_fixed: rrel_scp_const: [VERTEXES ARE HERE: ];;
+		=> nrel_goto : ..proc_create_vertex_c ;;
+	*);;
+
+	-> ..proc_create_vertex_c (*
+		<- contAssign ;;
+		
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_link: _vertex_counter;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: rrel_link: [0];;
+
+			=> nrel_goto: ..proc_seach2;;
+	*);;
+
+	-> ..proc_seach2 (*
+		<- searchElStr3 ;;
+
+		-> rrel_1: rrel_fixed: rrel_scp_var: _set_of_vertexes;;
+		-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc6;;
+		-> rrel_3: rrel_assign: rrel_scp_var: _graph_arc4;;
+
+		=> nrel_then: ..proc_erase2;;
+		=> nrel_else: ..proc_print_a_word2;;
+		//=> rrel_else: ....proc_return;;
+	*);;
+
+	-> ..proc_erase2 (*
+		<- eraseEl;;
+		-> rrel_1: rrel_fixed: rrel_scp_var: rrel_pos_const_perm: rrel_erase: _arc6;;
+
+		=> nrel_goto: ..proc_summator2;;
+	*);;
+
+	-> ..proc_summator2 (*
+		<- contAdd;;
+		-> rrel_1: rrel_fixed: rrel_scp_var: rrel_link: _vertex_counter;;
+		-> rrel_2: rrel_fixed: rrel_scp_var: rrel_link: _vertex_counter;;
+		-> rrel_3: rrel_fixed: rrel_scp_const: rrel_link: [1];;
+
+		=> nrel_goto: ..proc_seach2;;
+	*);;
+
+	-> ..proc_print_a_word2 (*
+		<- print;;
+		-> rrel_1: rrel_fixed: rrel_scp_const: [-----------NUMBER_OF_VERTEXES: ];;
+
+		=> nrel_goto: ..proc_print_amount_of_vertexes;;
+	*);;
+
+	-> ..proc_print_amount_of_vertexes (*
+		<- printNl;;
+		-> rrel_1: rrel_fixed: rrel_scp_var: _vertex_counter;;
+
+		=> nrel_goto: ..proc_create_result;;
+	*);;
+
+	-> ..proc_create_result (*
+		<- contAssign ;;
+		
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_link: _result;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: rrel_link: [0];;
+
+			=> nrel_goto: ..proc_minus;;
+	*);;
+
+	-> ..proc_minus (*
+		<- contSub;;
+		-> rrel_1: rrel_fixed: rrel_scp_var: rrel_link: _result;;
+		-> rrel_2: rrel_fixed: rrel_scp_var: rrel_link: _arc_counter;;
+		-> rrel_3: rrel_fixed: rrel_scp_var: rrel_link: _vertex_counter;;
+
+		=> nrel_goto: ..proc_pochti_result;;
+	*);;
+
+	-> ..proc_pochti_result (*
+		<- print;;
+		-> rrel_1: rrel_fixed: rrel_scp_const: [-----------RESULT_IS_COMING: ];;
+
+		=> nrel_goto: ..proc_pochti_result_N;;
+	*);;
+
+	-> ..proc_pochti_result_N (*
+		<- printNl;;
+		-> rrel_1: rrel_fixed: rrel_scp_var: _result;;
+
+		=> nrel_goto: ..proc_plus_1;;
+	*);;
+
+	-> ..proc_plus_1 (*
+		<- contAdd;;
+		-> rrel_1: rrel_fixed: rrel_scp_var: rrel_link: _result;;
+		-> rrel_2: rrel_fixed: rrel_scp_var: rrel_link: _result;;
+		-> rrel_3: rrel_fixed: rrel_scp_const: rrel_link: [1];;
+
+		=> nrel_goto: ..proc_result;;
+	*);;
+
+	-> ..proc_result (*
+		<- print;;
+		-> rrel_1: rrel_fixed: rrel_scp_const: [-----------RESULT_IS_: ];;
+
+		=> nrel_goto: ..proc_result_N;;
+	*);;
+
+	-> ..proc_result_N (*
+		<- printNl;;
+		-> rrel_1: rrel_fixed: rrel_scp_var: _result;;
+
+		=> nrel_goto: ..proc_return;;
+	*);;
+
+	-> ..proc_return (*
+
+            	<- return;;
+        	*);;
+*);;
+*);;
+    
+
